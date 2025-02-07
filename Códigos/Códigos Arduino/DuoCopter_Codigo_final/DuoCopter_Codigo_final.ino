@@ -19,7 +19,7 @@ Servo leftMotor, rightMotor;
 
 // Variáveis PID
 double PID = 0.0, valP = 0.0, valI = 0.0, valD = 0.0;
-double kp = 3.55, ki = 0.003, kd = 2.05;
+double kp = 3.851, ki = 0.031, kd = 1.75;
 
 // Variáveis dos motores
 float leftMotorPWM = 0.0, rightMotorPWM = 0.0;
@@ -296,6 +296,7 @@ void call_btOnOff(void *ptr) {
     leftMotor.writeMicroseconds(MotorsOFF); // Inicia com os motores desligados
     rightMotor.writeMicroseconds(MotorsOFF);
     delay(2000);
+    time = millis();
   } else {
     leftMotor.writeMicroseconds(MotorsOFF); // Desliga os motores
     rightMotor.writeMicroseconds(MotorsOFF);
